@@ -2,7 +2,7 @@
 
 Swift bindings for [Frida](https://frida.re).
 
-## Install
+## Install - macOS
 
 - Build Frida for your Mac, e.g. `make core-macos`
 - Generate a devkit:
@@ -10,6 +10,32 @@ Swift bindings for [Frida](https://frida.re).
     ./releng/devkit.py frida-core macos-x86_64 ./frida-swift/CFrida/
 
 - Open and build with Xcode.
+
+## Install - macOS + iOS (experimental)
+
+- Get the latest `frida-core` devkit from [here](https://github.com/frida/frida/releases)
+- Download both Mac and iOS arm64e `frida-core` devkits (at the time of writing, `frida-core-devkit-16.2.1-macos-arm64e` and `frida-core-devkit-16.2.1-ios-arm64e`)
+- Extract the packages
+- Move `frida-core.h` header within each platform directory to a new directory, like `headers`
+- Package both as a `xcframework`:
+
+```
+xcodebuild -create-xcframework \
+    -library ./frida-core-devkit-16.2.1-ios-arm64e/libfrida-core.a \
+    -headers ./frida-core-devkit-16.2.1-ios-arm64e/headers \
+    -library ./frida-core-devkit-16.2.1-macos-arm64e/libfrida-core.a \
+    -headers ./frida-core-devkit-16.2.1-macos-arm64e/headers \
+    -output ./FridaCore.xcframework
+```
+
+- Within each `Headers` directory inside the generated `xcframework`, create a `module.modulemap` file with the following contents:
+
+```
+module CFrida {
+    header "frida-core.h"
+    export *
+}
+```
 
 ## Example
 

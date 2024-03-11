@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0C2573901CAD790B0075F77A /* frida-core.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C25738D1CAD790B0075F77A /* frida-core.h */; };
-		0C2573911CAD790B0075F77A /* libfrida-core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C25738E1CAD790B0075F77A /* libfrida-core.a */; };
 		0C2573931CAD990A0075F77A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2573921CAD990A0075F77A /* Device.swift */; };
 		0C2573951CADA58B0075F77A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2573941CADA58B0075F77A /* Error.swift */; };
 		0C2573971CADB7C60075F77A /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2573961CADB7C60075F77A /* Runtime.swift */; };
@@ -35,6 +34,9 @@
 		0CD8B813268FF2110051FE73 /* BusDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8B812268FF2110051FE73 /* BusDelegate.swift */; };
 		0CD8B816268FFFDE0051FE73 /* PortalMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8B814268FFFDE0051FE73 /* PortalMembership.swift */; };
 		0CD8B817268FFFDE0051FE73 /* Relay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8B815268FFFDE0051FE73 /* Relay.swift */; };
+		F40C90C52B9F34BF0024CACB /* PlatformShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C90C42B9F34BF0024CACB /* PlatformShims.swift */; };
+		F40C90E72B9F3DE90024CACB /* FridaCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40C90E52B9F3DE20024CACB /* FridaCore.xcframework */; };
+		F40C90E82B9F3DE90024CACB /* FridaCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F40C90E52B9F3DE20024CACB /* FridaCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA517E9422C41250009A9A0E /* RpcRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA517E9322C41250009A9A0E /* RpcRequest.swift */; };
 		FA517E9622C4129A009A9A0E /* RpcFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA517E9522C4129A009A9A0E /* RpcFunction.swift */; };
 		FA517E9E22C41380009A9A0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA517E9D22C41380009A9A0E /* main.m */; };
@@ -59,6 +61,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F40C90E92B9F3DE90024CACB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F40C90E82B9F3DE90024CACB /* FridaCore.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA517E9922C41380009A9A0E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,6 +116,8 @@
 		0CD8B812268FF2110051FE73 /* BusDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusDelegate.swift; sourceTree = "<group>"; };
 		0CD8B814268FFFDE0051FE73 /* PortalMembership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalMembership.swift; sourceTree = "<group>"; };
 		0CD8B815268FFFDE0051FE73 /* Relay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relay.swift; sourceTree = "<group>"; };
+		F40C90C42B9F34BF0024CACB /* PlatformShims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformShims.swift; sourceTree = "<group>"; };
+		F40C90E52B9F3DE20024CACB /* FridaCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FridaCore.xcframework; sourceTree = "<group>"; };
 		FA517E9322C41250009A9A0E /* RpcRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpcRequest.swift; sourceTree = "<group>"; };
 		FA517E9522C4129A009A9A0E /* RpcFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpcFunction.swift; sourceTree = "<group>"; };
 		FA517E9B22C41380009A9A0E /* TestTarget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestTarget; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C2573911CAD790B0075F77A /* libfrida-core.a in Frameworks */,
+				F40C90E72B9F3DE90024CACB /* FridaCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +155,7 @@
 		0C5A27C81CA6FD85004D820F /* CFrida */ = {
 			isa = PBXGroup;
 			children = (
+				F40C90E52B9F3DE20024CACB /* FridaCore.xcframework */,
 				0C25738D1CAD790B0075F77A /* frida-core.h */,
 				0C25738E1CAD790B0075F77A /* libfrida-core.a */,
 				0C25738F1CAD790B0075F77A /* module.modulemap */,
@@ -155,6 +171,7 @@
 				0C9289421CA6F06C00FBA302 /* FridaTests */,
 				FA517E9C22C41380009A9A0E /* TestTarget */,
 				0C9289351CA6F06C00FBA302 /* Products */,
+				F40C90E62B9F3DE90024CACB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +190,7 @@
 			children = (
 				0C9289371CA6F06C00FBA302 /* Frida.h */,
 				0C9289391CA6F06C00FBA302 /* Info.plist */,
+				F40C90C42B9F34BF0024CACB /* PlatformShims.swift */,
 				0C5A27BC1CA6F127004D820F /* DeviceManager.swift */,
 				0C3DE4E71CB1A9530091AC08 /* DeviceManagerDelegate.swift */,
 				0C2573921CAD990A0075F77A /* Device.swift */,
@@ -212,6 +230,13 @@
 			path = FridaTests;
 			sourceTree = "<group>";
 		};
+		F40C90E62B9F3DE90024CACB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA517E9C22C41380009A9A0E /* TestTarget */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +268,7 @@
 				0C9289301CA6F06C00FBA302 /* Frameworks */,
 				0C9289311CA6F06C00FBA302 /* Headers */,
 				0C9289321CA6F06C00FBA302 /* Resources */,
+				F40C90E92B9F3DE90024CACB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,8 +321,9 @@
 		0C92892B1CA6F06C00FBA302 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = Frida;
 				TargetAttributes = {
 					0C9289331CA6F06C00FBA302 = {
@@ -364,6 +391,7 @@
 				0C3DE4E81CB1A9530091AC08 /* DeviceManagerDelegate.swift in Sources */,
 				0C2573971CADB7C60075F77A /* Runtime.swift in Sources */,
 				0C5A27BD1CA6F127004D820F /* DeviceManager.swift in Sources */,
+				F40C90C52B9F34BF0024CACB /* PlatformShims.swift in Sources */,
 				FA517E9422C41250009A9A0E /* RpcRequest.swift in Sources */,
 				0C2573951CADA58B0075F77A /* Error.swift in Sources */,
 				0C2573931CAD990A0075F77A /* Device.swift in Sources */,
@@ -541,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64e;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -555,10 +584,10 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Frida/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					CFrida,
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_CFLAGS = "";
@@ -569,12 +598,15 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = re.frida.Frida;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = CFrida;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -582,6 +614,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64e;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -596,10 +629,10 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Frida/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					CFrida,
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_CFLAGS = "";
@@ -610,12 +643,15 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = re.frida.Frida;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = CFrida;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -625,7 +661,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = FridaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = re.frida.FridaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -638,7 +678,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = FridaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = re.frida.FridaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

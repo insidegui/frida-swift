@@ -35,7 +35,7 @@ public class ProcessDetails: NSObject, NSCopying {
         return result
     }()
 
-    public lazy var icons: [NSImage] = {
+    public lazy var icons: [FridaPlatformImage] = {
         guard let icons = parameters["icons"] as? [[String: Any]] else {
             return []
         }

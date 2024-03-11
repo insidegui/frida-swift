@@ -135,7 +135,7 @@ public class Device: NSObject, NSCopying {
         return String(cString: frida_device_get_name(handle))
     }
 
-    public lazy var icon: NSImage? = {
+    public lazy var icon: FridaPlatformImage? = {
         guard let iconVariant = frida_device_get_icon(handle) else {
             return nil
         }
